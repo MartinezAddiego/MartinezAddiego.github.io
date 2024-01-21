@@ -1,3 +1,4 @@
 # MartinezAddiego.github.io
-This is where I'll be updating my personal portfolio
-Updated as of 01.20.2024
+This repository will contain the code for my personal portfolio
+
+I will try to update it semi-regularly: updated as of 01.20.2024
