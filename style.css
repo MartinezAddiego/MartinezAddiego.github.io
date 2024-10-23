@@ -8,6 +8,9 @@
 body {
     font-family: 'Montserrat', sans-serif;
     color: #74787A;
+    max-width: 1400px;  /* Fixed width for the main content */
+    margin: 0 auto;     /* Center content horizontally */
+    padding: 0 20px;    /* Add some padding for spacing */
 }
 
 /* Header Styles */
@@ -80,22 +83,31 @@ nav.navbar .menu-items {
 
 /* General Section Styles */
 section {
-    padding: 4vh 10%;
+    padding: 3vh 10%;
     box-sizing: border-box;
 }
 
 /* Home Section Styles */
 .home {
-    position: relative;
     display: flex;
-    justify-content: center;
-    gap: 5rem;
+    justify-content: center;  /* Center name and picture horizontally */
+    align-items: center;      /* Center vertically */
     height: 80vh;
+    gap: 5rem;
+    max-width: 100%;          /* Prevent overflow */
+    width: 100%;              /* Ensure the section fits the container */
+    flex-wrap: wrap;          /* Allow wrapping on smaller screens */
+    box-sizing: border-box;   /* Include padding and borders in width */
 }
 
+/* Section Container Styles */
 .section-container {
     display: flex;
-    position: relative;
+    justify-content: center;  /* Align content horizontally */
+    align-items: center;
+    width: 100%;              /* Take full width of the parent */
+    gap: 5rem;
+    flex-wrap: nowrap;         /* Prevent wrapping unless needed */
 }
 
 .home-picture {
@@ -181,6 +193,10 @@ section {
     margin-bottom: 1rem;
 }
 
+.about-me-text p span{
+    color: #3475c0;
+}
+
 .tab-titles {
     display: flex;
     justify-content: center;
@@ -213,51 +229,99 @@ section {
     width: 50%;
 }
 
+/* TAB TITLES */
+.tab-titles {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+    font-size: 1.25rem;
+    color: black;
+}
+
+.tab-links {
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+    margin-right: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.tab-links:hover {
+    color: #275a9e;
+}
+
+.tab-links::after {
+    content: '';
+    width: 0;
+    height: 2px;
+    position: absolute;
+    background: #3475c0;
+    left: 0;
+    bottom: -5px;
+    transition: width 0.3s ease;
+}
+
+.tab-links.active-link::after {
+    width: 50%;
+}
+
+/* TAB CONTENTS */
 .tab-contents {
     font-size: 1rem;
-    margin: auto;
+    margin: 20px auto;
     width: 60%;
-    padding: 10px;
+    padding: 20px;
     display: none;
-}
-
-.tab-contents ul {
     text-align: center;
-}
-
-.tab-contents ul li {
-    text-align: center;
-    list-style: none;
-    margin: 10px 0;
-}
-
-.tab-contents ul li span {
-    color: #3475c0;
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-.tab-contents ul li p {
-    margin: 0;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    background-color: #f9f9f9;
 }
 
 .tab-contents.active-tab {
     display: block;
 }
 
-.information {
-    font-style: italic;
-    font-size: 1rem !important;
+/* LIST ITEMS FOR TAB CONTENT */
+.tab-contents ul {
+    padding: 0;
 }
 
-.timeline {
+.tab-contents ul li {
+    list-style: none;
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;  /* Center-aligns content */
+    text-align: center;
+}
+
+/* TITLES (e.g., PHD STUDENT, RESEARCH ASSISTANT) */
+.tab-contents ul li span {
+    color: #3475c0;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+/* TIMELINE STYLING */
+.tab-contents ul li p.timeline {
     background-color: #e3f5ff;
-    font-size: 1rem !important;
-    display: inline-block;
-    margin: 5px;
-    padding: 5px;
+    font-size: 0.9rem;
+    margin: 5px 0;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
     white-space: nowrap;
+}
+
+/* ADDITIONAL INFORMATION TEXT */
+.information {
+    font-style: italic;
+    font-size: 1rem;
+    margin-top: 5px;
+    max-width: 75%;  /* Prevents long text from stretching too wide */
 }
 
 /* News Section Styles */
@@ -312,6 +376,64 @@ table.table-sm th {
     color: #3475c0;
 }
 
+/* Explore Section */
+.explore {
+    padding: 5rem 10%;  /* Spacious padding for desktop */
+    text-align: center;
+    background-color: #f7f7f7;
+}
+
+.explore h1 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    color: #3475c0;
+}
+
+/* Options Container for Cards */
+.options-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 2rem;
+    flex-wrap: wrap;  /* Allow cards to wrap on smaller screens */
+    margin-top: 2rem;
+}
+
+/* Option Card Styling */
+.option-card {
+    display: block;
+    width: 30%;  /* Three cards in a row on larger screens */
+    min-width: 250px;  /* Prevent cards from becoming too narrow */
+    padding: 2rem;
+    text-align: center;
+    border: 1px solid #e0e0e0;
+    border-radius: 15px;
+    background-color: #ffffff;
+    text-decoration: none;
+    color: black;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover Effect for Cards */
+.option-card:hover {
+    transform: scale(1.05);  /* Slight zoom effect */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);  /* Subtle shadow */
+}
+
+/* Option Card Header */
+.option-card h2 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    color: #3475c0;
+}
+
+/* Option Card Paragraph */
+.option-card p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+}
+
 /* Contact Section Styles */
 .contact {
     color: #3475c0;
@@ -344,6 +466,64 @@ table.table-sm th {
 .footer-info h4 a:hover {
     color: #74787A;
 }
+
+/* Philosophies Page Styles */
+
+.philosophies, .resources {
+    padding-top: 100px;
+    padding-left: 10%;
+    padding-right: 10%;
+    text-align: center;
+}
+
+.philosophies h1, .resources h1{
+    color: #3475c0;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.philosophies h2, .resources h2{
+    color: black;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+.philosophies p{
+    text-align: justify;
+    margin-bottom: 0.75rem;
+}
+
+.philosophies #citations{
+    text-align: justify;
+    font-size: 0.7rem;
+    margin-bottom: 0.75rem;
+}
+
+blockquote {
+    font-style: italic;
+    margin: 1.5rem 10%;
+    padding-left: 1rem;
+    border-left: 4px solid #3475c0; /* Optional: Vertical line for styling */
+    color: #555;
+}
+
+blockquote cite {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    color: #888;
+    text-align: right;
+}
+
+.philosophies h3{
+    color: black;
+    margin-bottom: 0.75rem;
+}
+
+.philosophies li, .resources li{
+    text-align: justify;
+    margin-bottom: 0.75rem;
+}
+
 
 /* Media Queries */
 @media only screen and (max-width: 1800px) {

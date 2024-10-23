@@ -2,9 +2,9 @@ var typed = new Typed(".description-text", {
     strings: [
         "Cognitive Neuroscientist",
         "PhD Candidate",
-        "Amateur Coder", 
-        "Tech Enthusiast",
-        "Always Learning"],
+        "Aspiring Programmer",
+        "Math Enthusiast", 
+        "Always Learning (mostly caffeinated)"],
     typeSpeed: 100,
     backSpeed: 100,
     backDelay: 1000,
