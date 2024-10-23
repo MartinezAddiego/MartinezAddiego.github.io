@@ -498,6 +498,11 @@ table.table-sm th {
     margin-bottom: 0.75rem;
 }
 
+.philosophies #citations a{
+    text-decoration: none;
+    color: black;
+}
+
 blockquote {
     font-style: italic;
     margin: 1.5rem 10%;
