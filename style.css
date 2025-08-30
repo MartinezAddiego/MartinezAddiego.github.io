@@ -364,7 +364,9 @@ table.table-sm th {
 .table-responsive {
     display: block;
     width: 100%;
+    height: 200px;
     overflow-x: auto;
+    overflow-y: auto;
 }
 
 .table a {
@@ -528,6 +530,17 @@ blockquote cite {
     text-align: justify;
     margin-bottom: 0.75rem;
 }
+
+/* LIST ITEMS FOR RESOURCES.HTML PAGE */
+.resources-content ol {
+    padding: 0;
+}
+
+.resources-content ol a {
+    text-decoration: none;
+    color:#74787A;
+}
+
 
 
 /* Media Queries */
