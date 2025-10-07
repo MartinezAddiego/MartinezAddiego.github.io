@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const typed = new Typed('.description-text', {
             strings: [
                 "Cognitive Neuroscientist",
-                "PhD Candidate",
+                "Post-Doctoral Scholar",
                 "Aspiring Programmer",
                 "Math Enthusiast", 
                 "Always Learning (mostly caffeinated)"],
