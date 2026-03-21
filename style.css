@@ -469,22 +469,33 @@ table.table-sm th {
     color: #74787A;
 }
 
+.blogposts {
+    padding-top: 100px;
+    padding-left: 10%;
+    padding-right: 10%;
+    text-align: justify;
+}
+
+.blogposts figure {
+  text-align: center;
+}
+
 /* Philosophies Page Styles */
 
-.philosophies, .resources {
+.philosophies, .resources, .blogs {
     padding-top: 100px;
     padding-left: 10%;
     padding-right: 10%;
     text-align: center;
 }
 
-.philosophies h1, .resources h1{
+.philosophies h1, .resources h1, .blogs h1, .blogposts h1{
     color: #3475c0;
     font-size: 3rem;
     margin-bottom: 1rem;
 }
 
-.philosophies h2, .resources h2{
+.philosophies h2, .resources h2, .blogs h2{
     color: black;
     font-size: 2rem;
     margin-bottom: 1rem;
@@ -526,17 +537,17 @@ blockquote cite {
     margin-bottom: 0.75rem;
 }
 
-.philosophies li, .resources li{
+.philosophies li, .resources li, .blogs li{
     text-align: justify;
     margin-bottom: 0.75rem;
 }
 
 /* LIST ITEMS FOR RESOURCES.HTML PAGE */
-.resources-content ol {
+.resources-content ol, .blogs-content ol {
     padding: 0;
 }
 
-.resources-content ol a {
+.resources-content ol a, .blogs-content ol a {
     text-decoration: none;
     color:#74787A;
 }
