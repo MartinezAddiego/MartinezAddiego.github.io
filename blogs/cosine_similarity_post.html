@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Posts</title>
+    <link rel="stylesheet" href="../style.css"> <!-- Use the same CSS -->
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <!--   header -->
+    <header class="header">
+        <a href="../index.html" class="logo">FMA</a>
+        <nav class="navbar">
+            <div class="menu-icon" onclick="toggleMenu()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <div class="menu-items" id="menuItems">
+                <a href="../index.html">Home</a>
+                <a href="../thoughts.html">Thoughts</a>
+                <a href="#contact">Contact Me</a>
+            </div>
+        </nav>
+    </header>
+    <section  class="blogposts">
+
+        <h1
+        id="mean-centered-cosine-similarity-pearson-correlation">Mean-centered
+        cosine similarity = Pearson correlation</h1>
+        <br>
+        <h2 id="april-18-2026">April 18, 2026</h2>
+        <br>
+        <p>About a month ago, I began exploring different similarity measures.
+        Continuing this quest, I wanted to better understand the relationship
+        between Pearson correlation and cosine similarity.</p>
+        <p>At first glance, cosine similarity and Pearson correlation seem
+        entirely unrelated beyond their ability to quantify relationships
+        between variables. Indeed, cosine similarity is usually tied to geometry
+        and the Pythagorean theorem, while Pearson correlation is a staple of
+        statistics. <strong>However, applying a simple transformation makes
+        these two measures equivalent.</strong></p>
+        <p>Conceptually, cosine similarity calculates the similarity between two
+        vectors by comparing the angle between them, regardless of their length.
+        To understand this intuitively, let's take three extreme cases:</p>
+        <br>
+        <p><b>Case 1:</b></p>
+        <p><span class="math inline">\(\vec{A}\)</span> and <span
+        class="math inline">\(\vec{B}\)</span> lie on the exact same line.</p>
+        <figure>
+        <img src="imgs/img_cosine1.png" alt="Example vectors, same line, same direction" width="400">
+        <figcaption>
+        Two example vectors A and B on the same line pointing in the same
+        direction
+        </figcaption>
+        </figure>
+        <br>
+        <p>Here, the angle between <span class="math inline">\(\vec{A}\)</span>
+        and <span class="math inline">\(\vec{B}\)</span> is zero.</p>
+        <p>So, <span class="math inline">\(\cos(\theta) = \cos(0) =
+        1\)</span></p>
+        <br>
+        <p><b>Case 2:</b></p>
+        <p><span class="math inline">\(\vec{A}\)</span> and <span
+        class="math inline">\(\vec{B}\)</span> lie on the exact same line, but
+        point in the opposite direction.</p>
+        <figure>
+        <img src="imgs/img_cosine2.png" alt="Example vectors, same line, opposite direction" width="400">
+        <figcaption>
+        Two example vectors A and B on the same line pointing in the opposite
+        direction
+        </figcaption>
+        </figure>
+        <br>
+        <p>Here, the angle between <span class="math inline">\(\vec{A}\)</span>
+        and <span class="math inline">\(\vec{B}\)</span> is 180.</p>
+        <p>So, <span class="math inline">\(\cos(\theta) = \cos(180) =
+        -1\)</span></p>
+        <br>
+        <p><b>Case 3:</b></p>
+        <p><span class="math inline">\(\vec{A}\)</span> and <span
+        class="math inline">\(\vec{B}\)</span> are totally perpendicular.</p>
+        <figure>
+        <img src="imgs/img_cosine3.png" alt="Example vectors, perpendicular to eachother" width="400">
+        <figcaption>
+        Two example vectors A and B perpendicular to each other
+        </figcaption>
+        </figure>
+        <br>
+        <p>Here, the angle between <span class="math inline">\(\vec{A}\)</span>
+        and <span class="math inline">\(\vec{B}\)</span> is 90.</p>
+        <p>So, <span class="math inline">\(\cos(\theta) = \cos(90) =
+        0\)</span></p>
+        <p>As mentioned, these are extreme examples just to gain some sort of an
+        intuition. What if instead we consider two vectors <span
+        class="math inline">\(\vec{A}\)</span> and <span
+        class="math inline">\(\vec{B}\)</span> that share some directionality,
+        but do not lie on the exact same line?</p>
+        <figure>
+        <img src="imgs/img_cosine4.png" alt="Example vectors pointing in a shared direction" width="400">
+        <figcaption>
+        Two example vectors A and B
+        </figcaption>
+        </figure>
+        <br>
+        <p>The cosine similarity is still the angle <span
+        class="math inline">\(\theta\)</span> between <span
+        class="math inline">\(\vec{A}\)</span> and <span
+        class="math inline">\(\vec{B}\)</span>, but perhaps we can
+        operationalize this more carefully. One way to measure how much <span
+        class="math inline">\(\vec{A}\)</span> points in the direction of <span
+        class="math inline">\(\vec{B}\)</span> is to "project" <span
+        class="math inline">\(\vec{A}\)</span> onto <span
+        class="math inline">\(\vec{B}.\)</span></p>
+        <figure>
+        <img src="imgs/img_cosine5.png" alt="Projection of vector A onto vector B" width="400">
+        <figcaption>
+        Projection of vector A onto vector B
+        </figcaption>
+        </figure>
+        <br>
+        <p>The more that <span class="math inline">\(\vec{A}\)</span> projects
+        onto <span class="math inline">\(\vec{B}\)</span>, the more they point
+        in the same direction. The more they point in the same direction, the
+        more aligned they are, and the greater their cosine similarity.
+        Algebraically, this projection of <span
+        class="math inline">\(\vec{A}\)</span> onto <span
+        class="math inline">\(\vec{B}\)</span> is captured by the dot product
+        (measures how much of <span class="math inline">\(\vec{A}\)</span> lies
+        in the direction of <span class="math inline">\(\vec{B}\)).</span></p>
+        <p>This is expressed as:</p>
+        <p><span class="math display">\[
+        \vec{A} \cdot \vec{B} = (\lVert A \rVert \lVert B \rVert)\cos(\theta)
+        \]</span></p>
+        <p>Which can be rewritten as: <span class="math display">\[
+        \cos(\theta) = \frac{\vec{A} \cdot \vec{B}}{(\lVert A \rVert \lVert B
+        \rVert)}
+        \]</span></p>
+        <p>Giving us the cosine similarity formula while also showing us that
+        cosine similarity is invariant to the magnitude of vectors.</p>
+        <p>We can rewrite the dot product in terms of its more algebraic
+        definitions:</p>
+        <p><span class="math display">\[
+        \vec{A} \cdot \vec{B} = \sum_{i=1}^{n}{a_i}{b_i}
+        \]</span></p>
+        <p><span class="math display">\[
+        \lVert A \rVert = \vec{A} \cdot \vec{A} =
+        \sqrt{\sum_{i=1}^{n}{a_i}{a_i}} = \sqrt{\sum_{i=1}^{n}{a_i}^2}
+        \]</span></p>
+        <p><span class="math display">\[
+        \lVert B \rVert = \vec{B} \cdot \vec{B} =
+        \sqrt{\sum_{i=1}^{n}{b_i}{b_i}} = \sqrt{\sum_{i=1}^{n}{b_i}^2}
+        \]</span></p>
+        <p>Taking the original equation, <span class="math display">\[
+        \cos(\theta) = \frac{\vec{A} \cdot \vec{B}}{(\lVert A \rVert \lVert B
+        \rVert)}
+        \]</span></p>
+        <p>we can now plug the earlier algebraic equivalences:</p>
+        <p><span class="math display">\[
+        \cos(\theta) =
+        \frac{\sum_{i=1}^{n}{a_i}{b_i}}{(\sqrt{\sum_{i=1}^{n}{a_i}^2})
+        (\sqrt{\sum_{i=1}^{n}{b_i}^2})}
+        \]</span></p>
+        <p>Hmmm. This has now begun to look very similar to the Pearson
+        correlation!</p>
+        <p>Spoiler: Pearson correlation uses mean-centered variables and is
+        written as -</p>
+        <p><span class="math display">\[
+        r = \frac{ \sum_{i=1}^{n}(x_i-\bar{x})(y_i-\bar{y}) }{%
+        \sqrt{\sum_{i=1}^{n}(x_i-\bar{x})^2}\sqrt{\sum_{i=1}^{n}(y_i-\bar{y})^2}}
+        \]</span></p>
+        <p>So, if we mean-center each of our vectors <span
+        class="math inline">\(\vec{A}\)</span> and <span
+        class="math inline">\(\vec{B}\)</span>, we arrive at the
+        cosine-similarity equation that is equivalent to Pearson
+        correlation!</p>
+        <p><span class="math display">\[
+        \cos(\theta) = \frac{\sum_{i=1}^{n}{(a_i - \bar{a})}{(b_i -
+        \bar{b})}}{(\sqrt{\sum_{i=1}^{n}{(a_i - \bar{a})}^2})
+        (\sqrt{\sum_{i=1}^{n}{(b_i - \bar{b})}^2})}
+        \]</span></p>
+        <p>This works because mean-centering shifts vectors so that their origin
+        is at their mean. Thus, the alignment is measured in terms of deviation
+        from the mean instead of absolute values!</p>
+        <br>
+        <p>In conclusion, we have now seen that <b>Pearson correlation is cosine similarity computed on mean-centered data</b>.
+        This means that it measures similarity in patterns and not absolute values!
+        </p>
+
+    </section>
+    
+    <!--   footer section -->
+    <section class="contact" id="contact">
+        <div class="container-outside">
+            <div class="footer-info-container">
+                <div class="footer-info">
+                    <h2>Get in touch!</h2>
+                    <h4>Message me on 
+                        <a target="_blank" href="https://twitter.com/intent/user?user_id=1634597285026840577/"><b>Twitter</b></a></h4>
+                </div>
+            </div>
+            <div class="footer-copyright-container">
+                <p>
+                    © Florencia Martinez Addiego
+                    <br>
+                    All Rights Reserved
+                </p>
+
+            </div>
+        </div>
+    </section>
+    <script src="../main.js" defer></script>
+</body>
+</html>
