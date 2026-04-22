@@ -36,12 +36,17 @@
         <p>About a month ago, I began exploring different similarity measures.
         Continuing this quest, I wanted to better understand the relationship
         between Pearson correlation and cosine similarity.</p>
+        <br>
         <p>At first glance, cosine similarity and Pearson correlation seem
         entirely unrelated beyond their ability to quantify relationships
         between variables. Indeed, cosine similarity is usually tied to geometry
         and the Pythagorean theorem, while Pearson correlation is a staple of
-        statistics. <strong>However, applying a simple transformation makes
-        these two measures equivalent.</strong></p>
+        statistics. <strong>However, cosine similarity and Pearson correlation
+        are acutally equivalent measures once data are mean-centered.</strong></p>
+        <br>
+        <p>To see why this is the case, we will begin by looking at cosine similarity geometrically.
+        We will then rewrite it algebraically, and finally we will compare it to Pearson correlation.
+        </p>
         <p>Conceptually, cosine similarity calculates the similarity between two
         vectors by comparing the angle between them, regardless of their length.
         To understand this intuitively, let's take three extreme cases:</p>
@@ -93,7 +98,8 @@
         and <span class="math inline">\(\vec{B}\)</span> is 90.</p>
         <p>So, <span class="math inline">\(\cos(\theta) = \cos(90) =
         0\)</span></p>
-        <p>As mentioned, these are extreme examples just to gain some sort of an
+        <br>
+        <p>As mentioned, these are "extreme" examples just to gain some sort of an
         intuition. What if instead we consider two vectors <span
         class="math inline">\(\vec{A}\)</span> and <span
         class="math inline">\(\vec{B}\)</span> that share some directionality,
@@ -105,7 +111,7 @@
         </figcaption>
         </figure>
         <br>
-        <p>The cosine similarity is still the angle <span
+        <p>Sure, the cosine similarity is still the cosine of the angle <span
         class="math inline">\(\theta\)</span> between <span
         class="math inline">\(\vec{A}\)</span> and <span
         class="math inline">\(\vec{B}\)</span>, but perhaps we can
@@ -124,12 +130,15 @@
         <p>The more that <span class="math inline">\(\vec{A}\)</span> projects
         onto <span class="math inline">\(\vec{B}\)</span>, the more they point
         in the same direction. The more they point in the same direction, the
-        more aligned they are, and the greater their cosine similarity.
-        Algebraically, this projection of <span
+        more aligned they are, and the greater their cosine similarity. </p>
+        <br>
+    
+        <p>Algebraically, the projection of <span
         class="math inline">\(\vec{A}\)</span> onto <span
         class="math inline">\(\vec{B}\)</span> is captured by the dot product
-        (measures how much of <span class="math inline">\(\vec{A}\)</span> lies
-        in the direction of <span class="math inline">\(\vec{B}\)).</span></p>
+        and measures how much of <span class="math inline">\(\vec{A}\)</span> lies
+        in the direction of <span class="math inline">\(\vec{B}\).</span></p>
+        <br>
         <p>This is expressed as:</p>
         <p><span class="math display">\[
         \vec{A} \cdot \vec{B} = (\lVert A \rVert \lVert B \rVert)\cos(\theta)
@@ -138,8 +147,9 @@
         \cos(\theta) = \frac{\vec{A} \cdot \vec{B}}{(\lVert A \rVert \lVert B
         \rVert)}
         \]</span></p>
-        <p>Giving us the cosine similarity formula while also showing us that
-        cosine similarity is invariant to the magnitude of vectors.</p>
+        <p>We can now see algebraically what we have been inferring from our extreme cases: that the cosine similarity does not depend
+        on the magnitude (length) of the vectors.</p>
+        <br>
         <p>We can rewrite the dot product in terms of its more algebraic
         definitions:</p>
         <p><span class="math display">\[
@@ -165,13 +175,22 @@
         \]</span></p>
         <p>Hmmm. This has now begun to look very similar to the Pearson
         correlation!</p>
-        <p>Spoiler: Pearson correlation uses mean-centered variables and is
-        written as -</p>
+        <br>
+        <p>Spoiler: while cosine similarity uses raw values, Pearson correlation instead uses mean-centered
+        variables -</p>
         <p><span class="math display">\[
         r = \frac{ \sum_{i=1}^{n}(x_i-\bar{x})(y_i-\bar{y}) }{%
         \sqrt{\sum_{i=1}^{n}(x_i-\bar{x})^2}\sqrt{\sum_{i=1}^{n}(y_i-\bar{y})^2}}
         \]</span></p>
-        <p>So, if we mean-center each of our vectors <span
+        <br>
+        <p>Critically, cosine similarity makes an implicit assumption: All of our computations thus far treat our vectors as defined relative to zero. This means
+        that <strong>cosine similarity depends on the coordinate system</strong>. If we were to
+        instead shift both vectors by adding a constant to each element, the cosine similarity would change.
+        <i>NB: This is something I struggled with intuitively, so it is best seen by choosing a couple of vectors and
+        then adding some constant to them.</i>
+        </p>
+        <br>
+        <p>If we mean-center each of our vectors -- and thus change our coordinate system! -- <span
         class="math inline">\(\vec{A}\)</span> and <span
         class="math inline">\(\vec{B}\)</span>, we arrive at the
         cosine-similarity equation that is equivalent to Pearson
@@ -182,11 +201,11 @@
         (\sqrt{\sum_{i=1}^{n}{(b_i - \bar{b})}^2})}
         \]</span></p>
         <p>This works because mean-centering shifts vectors so that their origin
-        is at their mean. Thus, the alignment is measured in terms of deviation
-        from the mean instead of absolute values!</p>
+        is at their mean. In other words, we are re-defining where "zero" lives. Now the alignment is measured in terms of deviation
+        from the mean!</p>
         <br>
-        <p>In conclusion, we have now seen that <b>Pearson correlation is cosine similarity computed on mean-centered data</b>.
-        This means that it measures similarity in patterns and not absolute values!
+        <p>In conclusion, we have shown that <b>Pearson correlation is cosine similarity computed on mean-centered data</b>.
+        What Pearson correlation (and mean-centered cosine similarity) really capture is how aligned vectors are relative to their means and not their absolute values.
         </p>
 
     </section>
