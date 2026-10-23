@@ -180,7 +180,8 @@ section {
 
 .main-about-me-text p{
     margin: 0 auto;
-    width: 70%;
+    width: 100%;
+    max-width: 800px;
     font-size: 1.25rem !important;
 }
 
@@ -203,42 +204,13 @@ section {
     color: #3475c0;
 }
 
-.tab-titles {
-    display: flex;
-    justify-content: center;
-    margin: 20px 0;
-    margin-bottom:0;
-    font-size: 1.25rem !important;
-    color:black;
-}
-
-.tab-links {
-    font-size: 1rem;
-    font-weight: 500;
-    cursor: pointer;
-    position: relative;
-    margin-right: 1.5rem;
-}
-
-.tab-links::after {
-    content: '';
-    width: 0;
-    height: 2px;
-    position: absolute;
-    background: #3475c0;
-    left: 0;
-    bottom: -5px;
-    transition: 0.3s;
-}
-
-.tab-links.active-link::after {
-    width: 50%;
-}
 
 /* TAB TITLES */
 .tab-titles {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
     margin: 20px 0;
     font-size: 1.25rem;
     color: black;
@@ -249,7 +221,6 @@ section {
     font-weight: 500;
     cursor: pointer;
     position: relative;
-    margin-right: 1.5rem;
     transition: color 0.3s ease;
 }
 
@@ -276,7 +247,8 @@ section {
 .tab-contents {
     font-size: 1rem;
     margin: 20px auto;
-    width: 60%;
+    width: 100%;
+    max-width: 700px;
     padding: 20px;
     display: none;
     text-align: center;
@@ -327,7 +299,7 @@ section {
     font-style: italic;
     font-size: 1rem;
     margin-top: 5px;
-    max-width: 75%;  /* Prevents long text from stretching too wide */
+    max-width: 34rem;  /* Prevents long text from stretching too wide */
 }
 
 /* News Section Styles */
@@ -699,5 +671,15 @@ blockquote cite {
     
     nav.navbar .menu-icon.open::before, nav.navbar .menu-icon.open::after {
         transform: rotate(-90deg);
+    }
+}
+
+@media only screen and (max-width: 600px){
+    section{
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+    .tab-contents {
+        padding: 15px 12px;
     }
 }
