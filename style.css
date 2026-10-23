@@ -92,7 +92,7 @@ section {
     display: flex;
     justify-content: center;  /* Center name and picture horizontally */
     align-items: center;      /* Center vertically */
-    height: 80vh;
+    min-height: 80vh;
     gap: 5rem;
     max-width: 100%;          /* Prevent overflow */
     width: 100%;              /* Ensure the section fits the container */
@@ -111,30 +111,34 @@ section {
 }
 
 .home-picture {
-    display: flex;
-    height: 600px;
-    width: 600px;
+    flex: 0 0 auto;
+    width: clamp(260px, 35vw, 520px);
+    aspect-ratio: 1/1;
     margin: auto 0;
 }
 
 .home-picture img {
+    display: block;
     border-radius: 35%;
     height: 100%;
-    margin: auto;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 
 .home-text {
     align-self: center;
-    white-space: nowrap;
+    min-width: 0;
+    white-space: normal;
 }
 
 .home-text h1 {
-    font-size: 4rem;
+    font-size: clamp(2rem, 4.5vw, 4rem);
     margin-bottom: 1rem;
 }
 
 .home-text h3 {
-    font-size: 2.5rem;
+    font-size: clamp(1.25rem,2.5vw,2.5rem);
 }
 
 .home-text h3 span {
@@ -155,6 +159,8 @@ section {
 
 .icon {
     height:50px;
+    width: auto;
+    flex-shrink: 0;
 }
 
 /* About Section Styles */
@@ -559,12 +565,12 @@ blockquote cite {
     /* Styles for screens up to 1800px width */
 }
 
-@media only screen and (max-width: 1450px) {
+/* @media only screen and (max-width: 1450px) {
     /* Styles for screens up to 1450px width */
-    .home-picture {
+    /* .home-picture {
         max-width: 300px;
     }
-}
+} */ 
 
 @media only screen and (max-width: 1200px) {
     /* Styles for screens up to 1200px width */
@@ -582,8 +588,6 @@ blockquote cite {
     }
 
     .home-picture {
-        height: 400px;
-        width: 400px;
         margin-bottom: 50px;
     }
 
