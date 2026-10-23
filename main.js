@@ -3,10 +3,8 @@ document.addEventListener('DOMContentLoaded', function () {
     if (descriptionElement) {
         const typed = new Typed('.description-text', {
             strings: [
-                "Cognitive Neuroscientist",
-                "Post-Doctoral Scholar",
-                "Aspiring Programmer",
-                "Math Enthusiast", 
+                "Cognitive Computational Neuroscientist",
+                "Post-Doctoral Scholar",                
                 "Always Learning (mostly caffeinated)"],
                 typeSpeed: 100,
                 backSpeed: 100,
