@@ -242,6 +242,7 @@ a { color: inherit; }
 .portrait {
     display: block;
     width: clamp(220px, 30vw, 340px);
+    height: auto;                  /* lets aspect-ratio keep it square at every width */
     aspect-ratio: 1 / 1;
     object-fit: cover;
     object-position: center top;   /* keeps the top of your head in frame */
@@ -376,6 +377,7 @@ a { color: inherit; }
 
 /* ---------- Background page ---------- */
 .page-head {
+    max-width: 720px;              /* same column as .page-body, so titles line up with the text */
     padding-block: clamp(36px, 6vw, 64px) 8px;
 }
 
@@ -486,7 +488,7 @@ a { color: inherit; }
 
 /* ---------- Prose pages (Philosophies, Writing) ---------- */
 .page-body.prose {
-    max-width: 680px;
+    max-width: 720px;
     line-height: 1.75;
 }
 
