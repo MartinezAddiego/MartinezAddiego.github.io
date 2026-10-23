@@ -3,64 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resources</title>
-    <link rel="stylesheet" href="style.css"> <!-- Use the same CSS -->
-    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <title>Resources | Florencia Martinez Addiego</title>
+    <meta name="description" content="Books, podcasts, and other resources recommended by Florencia Martinez Addiego.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="home.css">
 </head>
 <body>
-    <!--   header -->
-    <header class="header">
-        <a href="index.html" class="logo">FMA</a>
-        <nav class="navbar">
-            <div class="menu-icon" onclick="toggleMenu()">
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <div class="bar"></div>
-            </div>
-            <div class="menu-items" id="menuItems">
-                <a href="index.html">Home</a>
-                <a href="index.html#explore">Explore</a>
-                <a href="#contact">Contact Me</a>
-            </div>
-        </nav>
+    <a class="skip-link" href="#content">Skip to content</a>
+
+    <header class="site-header">
+        <div class="wrap">
+            <a href="index.html#home" class="logo">FMA</a>
+            <nav aria-label="Main">
+                <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Menu">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#explore" aria-current="page">Explore</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <section class="resources">
-        <h1>Books, Podcasts, and More</h1>
-        <div class="resources-content">
+    <main id="content">
+        <div class="wrap page-head">
+            <h1>Books, Podcasts, and More</h1>
+        </div>
+
+        <div class="wrap page-body prose">
             <h2>Books Of Interest</h2>
             <ol>
-                <li><a target="_blank" href="https://www.amazon.com/Deep-Work-Cal-Newport-audiobook/dp/B0189PVAWY/ref=sr_1_2?dib=eyJ2IjoiMSJ9.2CTruDD7QUee-M3dbcN6Zz6ACs2Fbs9QO1BNY7zNU-atWY1Zwdq1R_NPgce3icIjW9nDU1dZgVeIaxJ_VAunlJDNGU3krtVyNqR1566clNrtMzbFTRcBTzjgEvPMiXlUdxWtRhUsrV9fozRjWXWDKAWK2eyxIqXNy9Pj6B7SqYz2t1KLIduS7_X8K58ZzMA8Ldk38wS6N3Edw2RH9RneSYr11lrTaw5I9EAtSc_zkIw.BNyJoYklgNfLsVeYq4CtM093IWMQubt2HOg-HS4WGwk&dib_tag=se&keywords=cal+newport%27s+deep+work&qid=1756590391&sr=8-2">Cal Newport's <i>Deep Work: Rules for Focused Success in a Distracted World</i></a></li>
-                <li><a target="_blank" href="https://www.amazon.com/Slow-Productivity-Accomplishment-Without-Burnout/dp/B0CB96H3M4/ref=sr_1_1?crid=1YZX6G6EHI7LE&dib=eyJ2IjoiMSJ9.nmyj2j-hMNp3pkXUCsGdhA.Eld4l5RgLBoSYI4wHEpLKV3MIYQq9R75UJXQ0kX89VQ&dib_tag=se&keywords=cal+newport%27s+slow+productivity&qid=1756590508&s=audible&sprefix=cal+newport%27s+slow+productivity%2Caudible%2C40&sr=1-1">Cal Newport's <i>Slow Productivity</i></a></li>
+                <li><a target="_blank" rel="noopener" href="https://www.amazon.com/Deep-Work-Cal-Newport-audiobook/dp/B0189PVAWY/ref=sr_1_2?dib=eyJ2IjoiMSJ9.2CTruDD7QUee-M3dbcN6Zz6ACs2Fbs9QO1BNY7zNU-atWY1Zwdq1R_NPgce3icIjW9nDU1dZgVeIaxJ_VAunlJDNGU3krtVyNqR1566clNrtMzbFTRcBTzjgEvPMiXlUdxWtRhUsrV9fozRjWXWDKAWK2eyxIqXNy9Pj6B7SqYz2t1KLIduS7_X8K58ZzMA8Ldk38wS6N3Edw2RH9RneSYr11lrTaw5I9EAtSc_zkIw.BNyJoYklgNfLsVeYq4CtM093IWMQubt2HOg-HS4WGwk&dib_tag=se&keywords=cal+newport%27s+deep+work&qid=1756590391&sr=8-2">Cal Newport's <i>Deep Work: Rules for Focused Success in a Distracted World</i></a></li>
+                <li><a target="_blank" rel="noopener" href="https://www.amazon.com/Slow-Productivity-Accomplishment-Without-Burnout/dp/B0CB96H3M4/ref=sr_1_1?crid=1YZX6G6EHI7LE&dib=eyJ2IjoiMSJ9.nmyj2j-hMNp3pkXUCsGdhA.Eld4l5RgLBoSYI4wHEpLKV3MIYQq9R75UJXQ0kX89VQ&dib_tag=se&keywords=cal+newport%27s+slow+productivity&qid=1756590508&s=audible&sprefix=cal+newport%27s+slow+productivity%2Caudible%2C40&sr=1-1">Cal Newport's <i>Slow Productivity</i></a></li>
             </ol>
             <h2>Podcasts of Interest</h2>
             <ol>
-                <li><a target="_blank" href="https://www.youtube.com/@CalNewportMedia/podcasts">Cal Newport's Deep Questions</a></li>
-                <li><a target="_blank" href="https://www.youtube.com/@hubermanlab/podcasts">Andrew Huberman's Huberman Lab</a></li>
+                <li><a target="_blank" rel="noopener" href="https://www.youtube.com/@CalNewportMedia/podcasts">Cal Newport's Deep Questions</a></li>
+                <li><a target="_blank" rel="noopener" href="https://www.youtube.com/@hubermanlab/podcasts">Andrew Huberman's Huberman Lab</a></li>
             </ol>
+        
         </div>
-    </section>
+    </main>
 
-    <!--   footer section -->
-    <section class="contact" id="contact">
-        <div class="container-outside">
-            <div class="footer-info-container">
-                <div class="footer-info">
-                    <h2>Get in touch!</h2>
-                    <h4>Message me on 
-                        <a target="_blank" href="https://twitter.com/intent/user?user_id=1634597285026840577/"><b>Twitter</b></a></h4>
-                </div>
-            </div>
-            <div class="footer-copyright-container">
-                <p>
-                    © Florencia Martinez Addiego
-                    <br>
-                    All Rights Reserved
-                </p>
+    <footer class="site-footer">
+        <p>&copy; Florencia Martinez Addiego</p>
+    </footer>
 
-            </div>
-        </div>
-    </section>
-    <script src="main.js" defer></script>
+    <script src="home.js" defer></script>
 </body>
 </html>

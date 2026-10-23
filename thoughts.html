@@ -3,62 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog Posts</title>
-    <link rel="stylesheet" href="style.css"> <!-- Use the same CSS -->
-    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <title>Writing | Florencia Martinez Addiego</title>
+    <meta name="description" content="Blog posts by Florencia Martinez Addiego on math, statistics, neuroscience, and AI.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="home.css">
 </head>
 <body>
-    <!--   header -->
-    <header class="header">
-        <a href="index.html" class="logo">FMA</a>
-        <nav class="navbar">
-            <div class="menu-icon" onclick="toggleMenu()">
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <div class="bar"></div>
-            </div>
-            <div class="menu-items" id="menuItems">
-                <a href="index.html">Home</a>
-                <a href="index.html#explore">Explore</a>
-                <a href="#contact">Contact Me</a>
-            </div>
-        </nav>
+    <a class="skip-link" href="#content">Skip to content</a>
+
+    <header class="site-header">
+        <div class="wrap">
+            <a href="index.html#home" class="logo">FMA</a>
+            <nav aria-label="Main">
+                <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Menu">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#explore" aria-current="page">Explore</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <section class="blogs">
-        <h1>Blog Posts</h1>
-        <div class="blogs-content">
-            <ol>
-                <li><a target="_blank" href="/blogs/sora_post.html">October 22, 2026 - What Happened to Sora?</a></li>
-                <li><a target="_blank" href="/blogs/pearson_post.html">March 21, 2026 - Changing values doesn't affect Pearson correlation (for two-level vectors)</a></li>
-                <li><a target="_blank" href="/blogs/cosine_similarity_post.html">April 18, 2026 - Mean-centered cosine similarity = Pearson correlation</a></li>
-            </ol>
+    <main id="content">
+        <div class="wrap page-head">
+            <h1>Writing</h1>
         </div>
-    </section>
 
-    <!--   footer section -->
-    <section class="contact" id="contact">
-        <div class="container-outside">
-            <div class="footer-info-container">
-                <div class="footer-info">
-                    <h2>Get in touch!</h2>
-                    <h4>Message me on 
-                        <a target="_blank" href="https://twitter.com/intent/user?user_id=1634597285026840577/"><b>Twitter</b></a></h4>
-                </div>
-            </div>
-            <div class="footer-copyright-container">
-                <p>
-                    © Florencia Martinez Addiego
-                    <br>
-                    All Rights Reserved
-                </p>
-
-            </div>
+        <div class="wrap page-body">
+            <ul class="post-list">
+                <li><a target="_blank" rel="noopener" href="/blogs/sora_post.html"><span class="post-date">October 22, 2026</span><span class="post-title">What Happened to Sora?</span></a></li>
+                <li><a target="_blank" rel="noopener" href="/blogs/cosine_similarity_post.html"><span class="post-date">April 18, 2026</span><span class="post-title">Mean-centered cosine similarity = Pearson correlation</span></a></li>
+                <li><a target="_blank" rel="noopener" href="/blogs/pearson_post.html"><span class="post-date">March 21, 2026</span><span class="post-title">Changing values doesn't affect Pearson correlation (for two-level vectors)</span></a></li>
+            </ul>
         </div>
-    </section>
-    <script src="main.js" defer></script>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; Florencia Martinez Addiego</p>
+    </footer>
+
+    <script src="home.js" defer></script>
 </body>
 </html>
-
-
-    
