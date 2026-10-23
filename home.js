@@ -7,7 +7,7 @@
     var el = document.getElementById('tagline-text');
     var phrases = [
         'Cognitive computational neuroscientist',
-        'Postdoctoral scholar',
+        'Postdoctoral fellow',
         'Always learning (mostly caffeinated)'
     ];
     var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
