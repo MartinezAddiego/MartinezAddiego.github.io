@@ -3,36 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog Posts</title>
-    <link rel="stylesheet" href="../style.css"> <!-- Use the same CSS -->
-    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <title>Changing values doesn&#x27;t affect Pearson correlation (for two-level vectors) | Florencia Martinez Addiego</title>
+    <meta name="description" content="Why changing the intermediate value in a two-level model vector does not change a Pearson correlation.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../home.css">
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
-    <!--   header -->
-    <header class="header">
-        <a href="../index.html" class="logo">FMA</a>
-        <nav class="navbar">
-            <div class="menu-icon" onclick="toggleMenu()">
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <div class="bar"></div>
-            </div>
-            <div class="menu-items" id="menuItems">
-                <a href="../index.html">Home</a>
-                <a href="../thoughts.html">Thoughts</a>
-                <a href="#contact">Contact Me</a>
-            </div>
-        </nav>
+    <a class="skip-link" href="#content">Skip to content</a>
+
+    <header class="site-header">
+        <div class="wrap">
+            <a href="../index.html#home" class="logo">FMA</a>
+            <nav aria-label="Main">
+                <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Menu">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="../index.html#home">Home</a></li>
+                    <li><a href="../index.html#about">About</a></li>
+                    <li><a href="../index.html#explore" aria-current="page">Explore</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
-    <section  class="blogposts">
-        <h1 id="changing-values-doesnt-affect-pearson-correlation-for-two-level-vectors">Changing
+
+    <main id="content">
+        <div class="wrap page-head post-head">
+            <a class="back-link" href="../thoughts.html">Back to Writing</a>
+            <h1 id="changing-values-doesnt-affect-pearson-correlation-for-two-level-vectors">Changing
         values doesn't affect Pearson correlation (for two-level vectors)
         </h1>
-        <br>
-        <h2 id="march-21-2026">March 21, 2026</h2>
-        <br>
-        <p>The other day, I was running a representational similarity analysis
+            <h2 id="march-21-2026">March 21, 2026</h2>
+        </div>
+
+        <div class="wrap page-body prose">
+<p>The other day, I was running a representational similarity analysis
         (RSA) comparing a model representational dissimilarity matrix (RDM) to
         neural data. In my case, I had a simple 2x2 design (e.g., size x
         category: big/small x face/body), and I wanted to test whether a region
@@ -231,33 +240,15 @@
         <br>
         <br>
 
-        <p><em>Many thanks to <a target="_blank" href="https://alishdipani.github.io/"><b>Alish Dipani</b></a> for the comments and constructive
+        <p><em>Many thanks to <a target="_blank" rel="noopener" href="https://alishdipani.github.io/"><b>Alish Dipani</b></a> for the comments and constructive
         feedback. All remaining mistakes are mine and mine alone.</em></p>
-
-
-    </section>
-    
-    <!--   footer section -->
-    <section class="contact" id="contact">
-        <div class="container-outside">
-            <div class="footer-info-container">
-                <div class="footer-info">
-                    <h2>Get in touch!</h2>
-                    <h4>Message me on 
-                        <a target="_blank" href="https://twitter.com/intent/user?user_id=1634597285026840577/"><b>Twitter</b></a></h4>
-                </div>
-            </div>
-            <div class="footer-copyright-container">
-                <p>
-                    © Florencia Martinez Addiego
-                    <br>
-                    All Rights Reserved
-                </p>
-
-            </div>
         </div>
-    </section>
-    <script src="../main.js" defer></script>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; Florencia Martinez Addiego</p>
+    </footer>
+
+    <script src="../home.js" defer></script>
 </body>
 </html>
-

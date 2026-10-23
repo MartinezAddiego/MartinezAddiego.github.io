@@ -3,35 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog Posts</title>
-    <link rel="stylesheet" href="../style.css"> <!-- Use the same CSS -->
-    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <title>What Happened to Sora? | Florencia Martinez Addiego</title>
+    <meta name="description" content="Why OpenAI&#x27;s Sora 2 was discontinued, and what &quot;fail quickly&quot; means outside of research.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../home.css">
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
-    <!--   header -->
-    <header class="header">
-        <a href="../index.html" class="logo">FMA</a>
-        <nav class="navbar">
-            <div class="menu-icon" onclick="toggleMenu()">
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <div class="bar"></div>
-            </div>
-            <div class="menu-items" id="menuItems">
-                <a href="../index.html">Home</a>
-                <a href="../thoughts.html">Thoughts</a>
-                <a href="#contact">Contact Me</a>
-            </div>
-        </nav>
+    <a class="skip-link" href="#content">Skip to content</a>
+
+    <header class="site-header">
+        <div class="wrap">
+            <a href="../index.html#home" class="logo">FMA</a>
+            <nav aria-label="Main">
+                <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Menu">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="../index.html#home">Home</a></li>
+                    <li><a href="../index.html#about">About</a></li>
+                    <li><a href="../index.html#explore" aria-current="page">Explore</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
-    <section  class="blogposts">
-        <h1 id="what-happened-to-sora">What Happened to Sora?
+
+    <main id="content">
+        <div class="wrap page-head post-head">
+            <a class="back-link" href="../thoughts.html">Back to Writing</a>
+            <h1 id="what-happened-to-sora">What Happened to Sora?
         </h1>
-        <br>
-        <h2 id="oct-22-2026">October 22, 2026</h2>
-        <br>
-        <p>“Fail quickly.” In research, we use this phrase to describe our approach when trying (at most times) 
+            <h2 id="oct-22-2026">October 22, 2026</h2>
+        </div>
+
+        <div class="wrap page-body prose">
+<p>“Fail quickly.” In research, we use this phrase to describe our approach when trying (at most times) 
             far-fetched ideas: test them early, learn from results, and move on quickly when you reach a dead end. 
             It is a useful principle for approaching exploratory research, offering a high-risk, high-reward scenario 
             where even failures can produce valuable knowledge. But, this same logic is generally not something that 
@@ -72,46 +81,28 @@
         </p>
 
         <br>
-        <p id="citations">
-            <a target="_blank" href="https://openai.com/index/sora-2/">[1] OpenAI Sora 2.
+        <p class="citations" id="citations">
+            <a target="_blank" rel="noopener" href="https://openai.com/index/sora-2/">[1] OpenAI Sora 2.</a>
             <br>
-            <a target="_blank" href="https://help.openai.com/en/articles/20001152-what-to-know-about-the-sora-discontinuation ">[2] OpenAI Sora 2 Discontinuation</a>
+            <a target="_blank" rel="noopener" href="https://help.openai.com/en/articles/20001152-what-to-know-about-the-sora-discontinuation ">[2] OpenAI Sora 2 Discontinuation</a>
             <br>
-            <a target="_blank" href="https://blog.samaltman.com/sora-2">[3] Sora 2 Sam Altman</a>
+            <a target="_blank" rel="noopener" href="https://blog.samaltman.com/sora-2">[3] Sora 2 Sam Altman</a>
             <br>
-            <a target="_blank" href="https://openai.com/index/disney-sora-agreement">[4] Disney Sora Agreement</a>
+            <a target="_blank" rel="noopener" href="https://openai.com/index/disney-sora-agreement">[4] Disney Sora Agreement</a>
             <br>
-            <a target="_blank" href="https://www.wsj.com/tech/ai/the-sudden-fall-of-openais-most-hyped-product-since-chatgpt-64c730c9">[5] The Sudden Fall of OpenAI’s Most Hyped Product Since ChatGPT</a>
+            <a target="_blank" rel="noopener" href="https://www.wsj.com/tech/ai/the-sudden-fall-of-openais-most-hyped-product-since-chatgpt-64c730c9">[5] The Sudden Fall of OpenAI’s Most Hyped Product Since ChatGPT</a>
             <br>
-            <a target="_blank" href="https://sherwood.news/tech/openais-sora-2-started-off-scorching-hot-things-have-slowed-down-since/">[6] Sora Usage Slows</a>
+            <a target="_blank" rel="noopener" href="https://sherwood.news/tech/openais-sora-2-started-off-scorching-hot-things-have-slowed-down-since/">[6] Sora Usage Slows</a>
             <br>
-            <a target="_blank" href="https://www.remio.ai/post/the-real-sora-cost-openai-s-5-billion-ai-video-problem">[6] The real cost of Sora</a>
-        </p>        
-
-
-    </section>
-    
-    <!--   footer section -->
-    <section class="contact" id="contact">
-        <div class="container-outside">
-            <div class="footer-info-container">
-                <div class="footer-info">
-                    <h2>Get in touch!</h2>
-                    <h4>Message me on 
-                        <a target="_blank" href="https://twitter.com/intent/user?user_id=1634597285026840577/"><b>Twitter</b></a></h4>
-                </div>
-            </div>
-            <div class="footer-copyright-container">
-                <p>
-                    © Florencia Martinez Addiego
-                    <br>
-                    All Rights Reserved
-                </p>
-
-            </div>
+            <a target="_blank" rel="noopener" href="https://www.remio.ai/post/the-real-sora-cost-openai-s-5-billion-ai-video-problem">[7] The real cost of Sora</a>
+        </p>
         </div>
-    </section>
-    <script src="../main.js" defer></script>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; Florencia Martinez Addiego</p>
+    </footer>
+
+    <script src="../home.js" defer></script>
 </body>
 </html>
-
