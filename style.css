@@ -458,6 +458,17 @@ table.table-sm th {
   text-align: center;
 }
 
+.blogposts #citations{
+    text-align: justify;
+    font-size: 0.7rem;
+    margin-bottom: 0.75rem;
+}
+
+.blogposts #citations a{
+    text-decoration: none;
+    color: black;
+}
+
 /* Philosophies Page Styles */
 
 .philosophies, .resources, .blogs {
