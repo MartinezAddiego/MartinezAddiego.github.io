@@ -1,0 +1,103 @@
+/* Fermata site. Colors come from the app's own palette; type is the system font (San Francisco on Apple devices). */
+:root {
+  color-scheme: light dark;
+  --ink: #26363D;
+  --muted: #5E6A6F;
+  --canvas: #F9F9F7;
+  --card: #FFFFFF;
+  --sea: #406E6B;
+  --pale: #E3EDE8;
+  --amber: #F5E8D1;
+  --line: #E1E5E3;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ink: #EAF0F0;
+    --muted: #A0ABB0;
+    --canvas: #121414;
+    --card: #212626;
+    --sea: #57948F;
+    --pale: #2B403B;
+    --amber: #54472B;
+    --line: #2C3333;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--canvas);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+}
+a { color: var(--sea); text-underline-offset: 3px; }
+a:hover { text-decoration-thickness: 2px; }
+:focus-visible { outline: 3px solid var(--sea); outline-offset: 3px; border-radius: 4px; }
+.skip { position: absolute; left: -9999px; top: 0; background: var(--sea); color: var(--canvas); padding: 10px 14px; z-index: 10; }
+.skip:focus { left: 8px; top: 8px; }
+
+.wrap { max-width: 760px; margin: 0 auto; padding: 0 22px; }
+
+/* Header and footer */
+.site-header { border-bottom: 1px solid var(--line); }
+.site-header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding-top: 16px; padding-bottom: 16px; }
+.brand { font-size: 20px; font-weight: 600; letter-spacing: -0.01em; color: var(--ink); text-decoration: none; }
+.site-header nav { display: flex; gap: 20px; font-size: 15px; flex-wrap: wrap; }
+.site-header nav a { color: var(--muted); text-decoration: none; }
+.site-header nav a:hover, .site-header nav a[aria-current="page"] { color: var(--ink); }
+.site-footer { border-top: 1px solid var(--line); margin-top: 56px; padding: 26px 0 40px; font-size: 14px; color: var(--muted); }
+.site-footer .wrap { display: flex; flex-direction: column; gap: 6px; }
+.site-footer a { color: var(--muted); }
+
+/* Hero */
+.hero { text-align: center; padding: 56px 0 30px; }
+.badge { display: inline-block; font-size: 13px; font-weight: 600; background: var(--pale); color: var(--sea); padding: 5px 14px; border-radius: 999px; margin-bottom: 18px; }
+.hero h1 { font-size: clamp(40px, 9vw, 64px); line-height: 1.05; margin: 0; letter-spacing: -0.03em; font-weight: 650; }
+.tagline { font-size: clamp(20px, 4.4vw, 26px); color: var(--sea); margin: 8px 0 0; font-weight: 500; }
+.sub { max-width: 520px; margin: 18px auto 0; color: var(--muted); font-size: 18px; }
+
+/* Screenshots */
+.shots { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; padding: 18px 0 8px; }
+.shot { width: 150px; aspect-ratio: 9 / 19.5; border-radius: 26px; border: 1px solid var(--line); background: var(--card); display: flex; align-items: center; justify-content: center; text-align: center; padding: 12px; font-size: 13px; color: var(--muted); overflow: hidden; }
+.shot img, .shot video { width: 100%; height: 100%; object-fit: cover; display: block; }
+.shot.video { background: var(--pale); color: var(--sea); }
+
+/* Sections */
+section { padding: 34px 0; }
+h2 { font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin: 0 0 14px; font-weight: 600; }
+h3 { font-size: 17px; margin: 0 0 6px; }
+.band { background: var(--card); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.pull { font-size: clamp(22px, 5vw, 30px); line-height: 1.25; font-weight: 600; letter-spacing: -0.015em; color: var(--sea); border-left: 4px solid var(--sea); margin: 22px 0; padding: 4px 0 4px 18px; }
+.lede { font-size: 19px; margin: 0 0 14px; }
+
+.steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 18px; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 18px; }
+.card .num { font-size: 12px; letter-spacing: 0.1em; font-weight: 700; color: var(--sea); text-transform: uppercase; margin-bottom: 6px; }
+.card p { margin: 0; font-size: 15.5px; }
+.inside { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+.inside .card { background: var(--pale); border-color: transparent; }
+.inside strong { display: block; margin-bottom: 2px; }
+.inside p { color: var(--ink); }
+.note { color: var(--muted); font-size: 15px; }
+
+/* Plain text pages (support, privacy) */
+.doc { padding: 40px 0 0; }
+.doc h1 { font-size: clamp(32px, 7vw, 44px); line-height: 1.1; margin: 0 0 8px; letter-spacing: -0.02em; }
+.doc h2 { font-size: 20px; letter-spacing: -0.005em; text-transform: none; color: var(--ink); margin: 34px 0 8px; }
+.doc p, .doc li { font-size: 17px; }
+.doc ul { padding-left: 22px; }
+.meta { color: var(--muted); font-size: 15px; margin: 0 0 22px; }
+.fill { background: var(--amber); color: var(--ink); padding: 0 6px; border-radius: 6px; }
+details { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 4px 16px; margin: 10px 0; }
+summary { cursor: pointer; font-weight: 600; padding: 12px 0; }
+details p { margin: 0 0 14px; }
+
+@media (max-width: 640px) {
+  body { font-size: 16.5px; }
+  .steps, .inside { grid-template-columns: 1fr; }
+  .shot { width: 132px; }
+  .hero { padding-top: 40px; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
