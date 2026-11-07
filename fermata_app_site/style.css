@@ -58,11 +58,12 @@ a:hover { text-decoration-thickness: 2px; }
 .tagline { font-size: clamp(20px, 4.4vw, 26px); color: var(--sea); margin: 8px 0 0; font-weight: 500; }
 .sub { max-width: 520px; margin: 18px auto 0; color: var(--muted); font-size: 18px; }
 
-/* Screenshots */
-.shots { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; padding: 18px 0 8px; }
-.shot { width: 150px; aspect-ratio: 9 / 19.5; border-radius: 26px; border: 1px solid var(--line); background: var(--card); display: flex; align-items: center; justify-content: center; text-align: center; padding: 12px; font-size: 13px; color: var(--muted); overflow: hidden; }
-.shot img, .shot video { width: 100%; height: 100%; object-fit: cover; display: block; }
-.shot.video { background: var(--pale); color: var(--sea); }
+/* Screenshots: a row you can scroll sideways, each screen snapping into place */
+.shots { display: flex; gap: 16px; overflow-x: auto; padding: 18px 2px 14px; scroll-snap-type: x proximity; -webkit-overflow-scrolling: touch; justify-content: safe center; }
+.shot { flex: 0 0 auto; width: 220px; margin: 0; scroll-snap-align: center; }
+.shot img { display: block; width: 100%; height: auto; border-radius: 28px; border: 1px solid var(--line); background: var(--card); box-shadow: 0 6px 22px rgba(38, 54, 61, 0.10); }
+.shot figcaption { text-align: center; font-size: 13px; color: var(--muted); margin-top: 8px; }
+@media (prefers-color-scheme: dark) { .shot img { box-shadow: none; } }
 
 /* Sections */
 section { padding: 34px 0; }
@@ -97,7 +98,7 @@ details p { margin: 0 0 14px; }
 @media (max-width: 640px) {
   body { font-size: 16.5px; }
   .steps, .inside { grid-template-columns: 1fr; }
-  .shot { width: 132px; }
+  .shot { width: 176px; }
   .hero { padding-top: 40px; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }

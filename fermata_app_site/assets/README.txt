@@ -1,10 +1,8 @@
-Drop your screenshots and video here, with these names (then update the placeholders in index.html as its comment explains):
+Screenshots used on the page (resized to 600 px wide from your originals), in the order shown:
 
-  command-center.png   The Command Center (season card, a front-burner milestone with its forecast badge, daily practice)
-  week.png             The Week screen (a target or two with tasks)
-  today.png            Today (the "Needs a time" list and a calendar with blocks)
-  planner.png          The morning planner (step 3 with the meter) or the full-screen "Good morning" offer
-  placement.png        Placement mode (free gaps outlined)
-  insights.png         Insights ("Where your time went" or "Best focus hours")
-  today-demo.mp4       A 15 to 20 second silent loop of tapping "Place" and watching the task land on the calendar (under about 5 MB)
-  share.png            Optional: a 1200 x 630 image for link previews (then uncomment the og:image line in each page)
+  command-center.png   The Command Center
+  week.png             The Week screen
+  today.png            Today's calendar and scheduled tasks
+
+To replace one, save the new screenshot with the same file name (about 600 px wide is plenty). To add or reorder, copy or move a <figure class="shot"> block in index.html.
+Optional: add share.png (1200 x 630) for link previews, then uncomment the og:image line in each page's <head>.
